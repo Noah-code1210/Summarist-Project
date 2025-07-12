@@ -6,10 +6,7 @@
 
 @layer components {
   .container {
-    @apply w-full max-w-[1920px] py-10
-  }
-  .row {
-    @apply w-full max-w-[1920px] mx-[440px]
+    @apply w-full max-w-[2020px] ml-40 py-10 flex justify-center items-center
   }
   .logo-img {
     @apply mx-[440px] my-4
@@ -17,11 +14,23 @@
    .list {
     @apply gap-1.5 text-base 
    }
+   .info__block--wrapper {
+    @apply flex flex-col justify-center items-center
+   }
+   .info-icon {
+    @apply w-14 h-14 mb-2
+   }
+   .info-title {
+    @apply text-[24px] font-medium mb-4
+   }
+   .info-para {
+    @apply w-full max-w-78 text-[#394547] text-lg text-center font-light
+   }
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #032b41;
 }
 
 @theme inline {
