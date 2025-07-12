@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@layer components {
+  .logo-img {
+    @apply mx-[440px] my-4
+  }
+   .list {
+    @apply gap-1.5 text-base 
+   }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
