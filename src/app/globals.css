@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
+
 @layer components {
+  .container {
+    @apply w-full max-w-[1920px] py-10
+  }
+  .row {
+    @apply w-full max-w-[1920px] mx-[440px]
+  }
   .logo-img {
     @apply mx-[440px] my-4
   }
