@@ -26,6 +26,21 @@
    .info-para {
     @apply w-full max-w-78 text-[#394547] text-lg text-center font-light
    }
+   .benefits {
+    @apply text-[#6b757b] text-[32px] mr-20 
+   }
+   .bold {
+    @apply font-medium w-full 
+   }
+   .percentage {
+    @apply text-[#0365f2] mr-4 mt-2 text-[20px] font-semibold 
+   }
+   .box__wrapper {
+    @apply flex flex-col gap-y-6 bg-[#f1f6f4] py-10 px-6 
+   }
+   .summarist-title {
+    @apply text-[20px] font-light max-w-[382px]
+   }
 }
 
 :root {
