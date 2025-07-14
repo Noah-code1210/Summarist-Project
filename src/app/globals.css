@@ -27,10 +27,10 @@
     @apply w-full max-w-78 text-[#394547] text-lg text-center font-light
    }
    .benefits {
-    @apply text-[#6b757b] text-[32px] mr-20 
+    @apply text-[#6b757b] text-[32px] 
    }
    .bold {
-    @apply font-medium w-full 
+    @apply font-normal w-full 
    }
    .percentage {
     @apply text-[#0365f2] mr-4 mt-2 text-[20px] font-semibold 

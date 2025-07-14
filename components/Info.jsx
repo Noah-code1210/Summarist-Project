@@ -34,7 +34,7 @@ function Info() {
               </div>
             </div>
             <div className="flex">
-              <div className="flex flex-col gap-y-2 font-medium">
+              <div className="flex flex-col gap-y-2 font-medium mr-20 ">
                 <div className="benefits">Enhance your knowledge</div>
                 <div className="benefits">Achieve greater success</div>
                 <div className="benefits">Improve your health</div>
@@ -42,7 +42,7 @@ function Info() {
                 <div className="benefits">Increase happiness</div>
                 <div className="benefits">Be the best version of yourself!</div>
               </div>
-              <div className="box__wrapper">
+              <div className="box__wrapper mb-24">
                 <div className="flex">
                   <div className="percentage">93%</div>
                   <div className="summarist-title">
@@ -64,6 +64,39 @@ function Info() {
                     <span className="bold"> significant positive </span>changes to their lives
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className="flex">
+                <div className="box__wrapper mb-24 mr-20 ">
+                <div className="flex">
+                  <div className="percentage">91%</div>
+                  <div className="summarist-title">
+                    of Summarist members
+                    <span className="bold"> report feeling more productive </span>
+                    after incorporating the service into their daily routine.
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="percentage">94%</div>
+                  <div className="summarist-title">
+                    of Summarist members have <span className="bold"> noticed an improvement </span>in their overall comprehension and retention of information.
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="percentage">88%</div>
+                  <div className="summarist-title">
+                    have made
+                    <span className="bold"> feel more informed </span>about current events and industry trends since using the platform.
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col items-end gap-y-2 font-medium">
+                <div className="benefits">Expand your learning</div>
+                <div className="benefits">Accomplish your goals</div>
+                <div className="benefits">Strengthen your vitality</div>
+                <div className="benefits">Become a better caregiver</div>
+                <div className="benefits">Improve your mood</div>
+                <div className="benefits">Maximize your abilities</div>
               </div>
             </div>
           </div>
