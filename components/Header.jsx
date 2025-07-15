@@ -17,7 +17,7 @@ function Header() {
                   Great summaries for busy people, individuals who barely have
                   time to read, and even people who don't like to read
                 </div>
-                <button className="w-full max-w-76 h-10 bg-[#2bd97c]">
+                <button className="login__button">
                     Login
                 </button>
               </div>
