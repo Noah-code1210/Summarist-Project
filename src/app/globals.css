@@ -53,6 +53,9 @@
    .review__name {
     @apply font-light
    }
+   .review__rating {
+    @apply flex mt-1
+   }
    .review__para {
     @apply w-full max-w-[565px] font-light
    }
