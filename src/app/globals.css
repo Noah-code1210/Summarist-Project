@@ -15,10 +15,10 @@
     @apply mx-[440px] my-4
   }
   .login__button {
-    @apply w-full max-w-76 h-10 bg-[#2bd97c] rounded-sm
+    @apply w-full max-w-76 h-10 bg-[#2bd97c] rounded-sm hover:bg-[#20ba68] transition-all cursor-pointer
   }
    .list {
-    @apply gap-1.5 text-base 
+    @apply gap-1.5 text-base cursor-pointer 
    }
    .info__block--wrapper {
     @apply flex flex-col justify-center items-center
