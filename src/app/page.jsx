@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import HeaderImg from "../../assets/HeaderImg.png";
 import { FaFileAlt, FaLightbulb, FaMicrophone } from "react-icons/fa";
@@ -6,10 +7,46 @@ import { FaCrown } from "react-icons/fa6";
 import { FaLeaf } from "react-icons/fa";
 import StatisticsIcon from "../../assets/icons/StatisticsIcon";
 import Logo from "../../assets/WebsiteLogo.png";
+import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import { IoPersonSharp } from "react-icons/io5";
 
 function Home() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
+      <section>
+        {showModal && (
+          <>
+            <div className="fixed top-0 left-0 w-full h-full bg-black opacity-70"></div>
+            <div className="fixed flex justify-center items-center w-full max-w-[1920px] h-full">
+              <div className="modal__container">
+                <div className="flex flex-col items-center justify-center pt-12 px-8 pb-6 bg-white min-w-[400px] min-h-[523px] relative rounded-2xl ">
+                  <div>
+                    <IoMdClose
+                      className="w-8 h-8 text-black absolute top-2 right-2 cursor-pointer"
+                      onClick={() => setShowModal(false)}
+                    />
+                  </div>
+                  <div className="text-xl font-bold text-[#032b41] mb-6">
+                    Log in to Summarist
+                  </div>
+                  <button className="relative flex bg-[#3a579d] text-white justify-center items-center rounded-sm w-full max-w-[336px] h-10">
+                    <figure>
+                      <IoPersonSharp className="absolute w-7 h-7 top-1.5 left-2"/>
+                    </figure>
+                    <div>
+                      Log in as Guest
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+      </section>
+
       <section>
         <div id="navbar">
           <div className="flex justify-between items-center">
@@ -21,7 +58,10 @@ function Home() {
               className="logo-img"
             />
             <ul className="flex gap-6 mr-[472px]">
-              <li className="list hover:text-[#2bd97c] transition-colors">
+              <li
+                className="list hover:text-[#2bd97c] transition-colors"
+                onClick={() => setShowModal(true)}
+              >
                 Login
               </li>
               <li className="list cursor-not-allowed">About</li>
@@ -244,7 +284,7 @@ function Home() {
           </div>
         </div>
       </section>
-      
+
       <section>
         <div id="statistics">
           <div className="container flex-col">
@@ -283,7 +323,7 @@ function Home() {
           </div>
         </div>
       </section>
-      
+
       <section>
         <div className="footer bg-[#f1f6f4] h-84">
           <div className="container flex">
