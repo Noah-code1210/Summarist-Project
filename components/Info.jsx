@@ -7,7 +7,7 @@ function Info() {
       <div id="info">
         <div className="container">
           <div className="flex flex-col">
-            <div className="text-[32px] font-bold flex justify-center mb-8">
+            <div className="section-title">
               Understand books in few minutes
             </div>
             <div className="flex gap-12 mb-24">

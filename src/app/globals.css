@@ -8,6 +8,9 @@
   .container {
     @apply w-full max-w-[2020px] ml-40 py-10 flex justify-center items-center
   }
+  .section-title {
+    @apply text-[32px] font-bold flex justify-center mb-8
+  }
   .logo-img {
     @apply mx-[440px] my-4
   }
@@ -40,6 +43,12 @@
    }
    .summarist-title {
     @apply text-[20px] font-light max-w-[382px]
+   }
+   .review__box {
+    @apply bg-[#fff3d7] p-4 mb-8 rounded-sm
+   }
+   .review__para {
+    @apply w-full max-w-[565px] font-light
    }
 }
 
