@@ -71,6 +71,12 @@
    .statistics__para {
     @apply font-light w-full max-w-[264px] text-center
    }
+   .footer__title {
+    @apply text-lg font-semibold text-[#032b41] mb-2
+   }
+   .footer__link {
+    @apply text-sm cursor-not-allowed text-[#394547] mb-2
+   }
 }
 
 :root {
