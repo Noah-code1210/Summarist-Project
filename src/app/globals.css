@@ -59,6 +59,18 @@
    .review__para {
     @apply w-full max-w-[565px] font-light
    }
+   .statistics__box {
+    @apply flex flex-col items-center justify-center bg-[#d7e9ff] rounded-xl p-6 pb-[40px] min-w-[314px]
+   }
+   .statistics__logo {
+    @apply w-12 h-12
+   }
+   .statistics__title {
+    @apply text-[40px] font-semibold
+   }
+   .statistics__para {
+    @apply font-light w-full max-w-[264px] text-center
+   }
 }
 
 :root {
