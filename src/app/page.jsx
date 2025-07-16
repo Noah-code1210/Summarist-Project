@@ -11,6 +11,7 @@ import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { IoPersonSharp } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -37,7 +38,9 @@ function Home() {
                     <figure>
                       <IoPersonSharp className="absolute w-7 h-7 top-1.5 left-2" />
                     </figure>
-                    <div>Log in as Guest</div>
+                    <Link href="/account">
+                      <div>Log in as Guest</div>
+                    </Link>
                   </button>
                   <div className="seperator">
                     <div className="mx-6">or</div>
@@ -117,7 +120,12 @@ function Home() {
                     Great summaries for busy people, individuals who barely have
                     time to read, and even people who don't like to read
                   </div>
-                  <button className="login__button" onClick={() => setShowModal(true)}>Login</button>
+                  <button
+                    className="login__button"
+                    onClick={() => setShowModal(true)}
+                  >
+                    Login
+                  </button>
                 </div>
                 <Image
                   src={HeaderImg}
@@ -312,7 +320,12 @@ function Home() {
                 are thorough and provide a great overview of the book's content.
               </div>
             </div>
-            <button className="login__button" onClick={() => setShowModal(true)}>Login</button>
+            <button
+              className="login__button"
+              onClick={() => setShowModal(true)}
+            >
+              Login
+            </button>
           </div>
         </div>
       </section>
