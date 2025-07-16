@@ -9,7 +9,7 @@ import StatisticsIcon from "../../assets/icons/StatisticsIcon";
 import Logo from "../../assets/WebsiteLogo.png";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import { IoPersonSharp } from "react-icons/io5";
+import { IoPersonSharp } from "react-icons/io5";import { FcGoogle } from "react-icons/fc";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -40,6 +40,25 @@ function Home() {
                       Log in as Guest
                     </div>
                   </button>
+                  <div className="seperator">
+                      <div className="mx-6">
+                        or
+                      </div>
+                  </div>
+                  <button className="relative flex bg-[#4285f4] text-white justify-center items-center rounded-sm w-full max-w-[336px] h-10">
+                    <figure>
+                      <FcGoogle className="absolute w-9 h-9 top-0.5 left-0.5 bg-white rounded-sm p-1"/>
+                    </figure>
+                    <div>
+                      Log in with Google
+                    </div>
+                  </button>
+                  <div className="seperator">
+                      <div className="mx-6">
+                        or
+                      </div>
+                  </div>
+                  <form action="" className="flex flex-col gap-y-4"></form>
                 </div>
               </div>
             </div>
