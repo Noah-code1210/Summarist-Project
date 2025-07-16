@@ -117,7 +117,7 @@ function Home() {
                     Great summaries for busy people, individuals who barely have
                     time to read, and even people who don't like to read
                   </div>
-                  <button className="login__button">Login</button>
+                  <button className="login__button" onClick={() => setShowModal(true)}>Login</button>
                 </div>
                 <Image
                   src={HeaderImg}
@@ -312,7 +312,7 @@ function Home() {
                 are thorough and provide a great overview of the book's content.
               </div>
             </div>
-            <button className="login__button">Login</button>
+            <button className="login__button" onClick={() => setShowModal(true)}>Login</button>
           </div>
         </div>
       </section>
