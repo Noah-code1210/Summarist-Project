@@ -77,8 +77,14 @@
    .footer__link {
     @apply text-sm cursor-not-allowed text-[#394547] mb-2
    }
+   .sign-in__buttons {
+    @apply relative flex text-white justify-center items-center rounded-sm w-full max-w-[336px] h-10 cursor-pointer transition-all
+   }
    .seperator {
     @apply flex items-center my-4 before:content-[""] before:block before:flex-grow before:h-[1px] before:bg-black after:content-[""] after:block after:flex-grow after:h-[1px] after:bg-black
+   }
+   .input {
+    @apply h-10 border-2 border-[#bac8ce] rounded-sm text-[#2d3233] text-sm px-3 outline-none min-w-[336px]
    }
 }
 

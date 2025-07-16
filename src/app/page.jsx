@@ -9,7 +9,8 @@ import StatisticsIcon from "../../assets/icons/StatisticsIcon";
 import Logo from "../../assets/WebsiteLogo.png";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import { IoPersonSharp } from "react-icons/io5";import { FcGoogle } from "react-icons/fc";
+import { IoPersonSharp } from "react-icons/io5";
+import { FcGoogle } from "react-icons/fc";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -32,33 +33,45 @@ function Home() {
                   <div className="text-xl font-bold text-[#032b41] mb-6">
                     Log in to Summarist
                   </div>
-                  <button className="relative flex bg-[#3a579d] text-white justify-center items-center rounded-sm w-full max-w-[336px] h-10">
+                  <button className="sign-in__buttons bg-[#3a579d] hover:bg-[#25396b]">
                     <figure>
-                      <IoPersonSharp className="absolute w-7 h-7 top-1.5 left-2"/>
+                      <IoPersonSharp className="absolute w-7 h-7 top-1.5 left-2" />
                     </figure>
-                    <div>
-                      Log in as Guest
-                    </div>
+                    <div>Log in as Guest</div>
                   </button>
                   <div className="seperator">
-                      <div className="mx-6">
-                        or
-                      </div>
+                    <div className="mx-6">or</div>
                   </div>
-                  <button className="relative flex bg-[#4285f4] text-white justify-center items-center rounded-sm w-full max-w-[336px] h-10">
+                  <button className="sign-in__buttons bg-[#4285f4] hover:bg-[#3367d6]">
                     <figure>
-                      <FcGoogle className="absolute w-9 h-9 top-0.5 left-0.5 bg-white rounded-sm p-1"/>
+                      <FcGoogle className="absolute w-9 h-9 top-0.5 left-0.5 bg-white rounded-sm p-1" />
                     </figure>
-                    <div>
-                      Log in with Google
-                    </div>
+                    <div>Log in with Google</div>
                   </button>
                   <div className="seperator">
-                      <div className="mx-6">
-                        or
-                      </div>
+                    <div className="mx-6">or</div>
                   </div>
-                  <form action="" className="flex flex-col gap-y-4"></form>
+                  <form className="flex flex-col gap-y-4">
+                    <input
+                      type="text"
+                      placeholder="Email Address"
+                      className="input"
+                    />
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      className="input"
+                    />
+                    <button className="login__button min-w-[336px] mb-6">
+                      Login
+                    </button>
+                  </form>
+                  <div className="text-sm text-[#116be9] font-light mb-8 cursor-pointer text-center hover:text-[#124a98] transition-all">
+                    Forgot your password?
+                  </div>
+                  <button className="w-full h-10 absolute bottom-0 bg-[#f1f6f4] text-[#116be9] rounded-b-sm cursor-pointer hover:bg-[#e1e9e8] transition-all">
+                    Don't have an account?
+                  </button>
                 </div>
               </div>
             </div>
