@@ -8,8 +8,23 @@ import { IoMdSearch } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaRegCircleQuestion } from "react-icons/fa6";
 import { MdLogout } from "react-icons/md";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function page() {
+  const [suggestedBook, setSuggestedBook] = useState([]);
+
+  useEffect(() => {
+    async function fetchSuggestedBook() {
+      const { data } = await axios.get(
+        "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected"
+      );
+      console.log(data)
+      setSuggestedBook(data);
+    }
+    fetchSuggestedBook();
+  }, []);
+
   return (
     <>
       <section>
@@ -107,16 +122,39 @@ function page() {
           </div>
           <div className="w-full max-w-[1070px] mx-auto px-6">
             <div className="w-full py-10">
-              <div>
-                <div className="text-[22px] font-bold text-[#032b41] mb-4">
-                  Selected just for you
-                </div>
-                <a href="" className="flex justify-between w-full max-w-[681px] h-[188px] bg-[#fbefd6] rounded-sm p-6  mb-6 gap-[26px]">
-                  <div className="text-[#032b41] w-[40%] max-w-[234px]">How Constant Innovation Creates Radically Successful Businesses</div>
-                  <div className="w-[1px] bg-[#bac8ce]"></div>
-                  <div className="flex gap-4 w-[60%] max-w-[351px]"></div>
-                </a>
-              </div>
+              {suggestedBook.map((book) => {
+                return (
+                  <div key={book.id}>
+                    <div className="text-[22px] font-bold text-[#032b41] mb-4">
+                      Selected just for you
+                    </div>
+                    <a
+                      href=""
+                      className="flex justify-between w-full max-w-[681px] h-[188px] bg-[#fbefd6] rounded-sm p-6  mb-6 gap-[26px]"
+                    >
+                      <div className="text-[#032b41] w-[40%] max-w-[234px]">
+                        {book.subTitle}
+                      </div>
+                      <div className="w-[1px] bg-[#bac8ce]"></div>
+                      <div className="flex gap-4 w-[60%] max-w-[351px]">
+                        <figure className="w-[140px] h-[140px]">
+                          <div className="invisible">
+                            {book.imageLink}
+                          </div>
+                        </figure>
+                        <div className="w-full">
+                          <div className="font-semibold text-[#032b41] mb-2">
+                            {book.title}
+                          </div>
+                          <div className="text-sm text-[#394547] mb-4">
+                            {book.author}
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
