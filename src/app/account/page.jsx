@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Logo from "../../../assets/WebsiteLogo.png";
+import { AiOutlineHome } from "react-icons/ai";
+import { BsBookmark } from "react-icons/bs";
+import { RiBallPenLine } from "react-icons/ri";
+import { IoMdSearch } from "react-icons/io";
 
 function page() {
   return (
@@ -13,6 +17,34 @@ function page() {
             alt="Website Logo Img"
             className="w-40 h-10"
           />
+        </div>
+        <div className="flex-grow flex-shrink basis-[0%] mt-10">
+          <div>
+            <a href="/account" className="account__tabs">
+              <div>
+                <AiOutlineHome className="account__tab--img" />
+              </div>
+              <div>For you</div>
+            </a>
+            <a href="/account" className="account__tabs">
+              <div>
+                <BsBookmark className="account__tab--img" />
+              </div>
+              <div>My Library</div>
+            </a>
+            <a href="/account" className="account__tabs">
+              <div>
+                <RiBallPenLine className="account__tab--img w-6 h-6" />
+              </div>
+              <div>Highlights</div>
+            </a>
+            <a href="/account" className="account__tabs">
+              <div>
+                <IoMdSearch className="account__tab--img" />
+              </div>
+              <div>Search</div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
