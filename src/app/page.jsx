@@ -22,7 +22,7 @@ function Home() {
         {showModal && (
           <>
             <div className="fixed top-0 left-0 w-full h-full bg-black opacity-70"></div>
-            <div className="fixed flex justify-center items-center w-full max-w-[1920px] h-full">
+            <div className="fixed flex justify-center items-center w-full max-w-[1070px] h-full">
               <div className="modal__container">
                 <div className="flex flex-col items-center justify-center pt-12 px-8 pb-6 bg-white min-w-[400px] min-h-[523px] relative rounded-2xl ">
                   <div>
