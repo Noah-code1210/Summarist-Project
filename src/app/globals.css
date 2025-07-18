@@ -92,6 +92,9 @@
    .account__tab--img {
     @apply flex items-center justify-center mr-2 w-6 h-6 
    }
+   .account__section--title {
+    @apply text-[22px] font-bold text-[#032b41] mb-4
+   } 
 }
 
 :root {
