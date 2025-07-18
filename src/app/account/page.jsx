@@ -138,7 +138,7 @@ function page() {
                       <div className="w-[1px] bg-[#bac8ce]"></div>
                       <div className="flex gap-4 w-[60%] max-w-[351px]">
                         <figure className="w-[140px] h-[140px]">
-                          <div className="invisible">
+                          <div>
                             {book.imageLink}
                           </div>
                         </figure>
