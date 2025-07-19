@@ -137,10 +137,8 @@ function page() {
                       </div>
                       <div className="w-[1px] bg-[#bac8ce]"></div>
                       <div className="flex gap-4 w-[60%] max-w-[351px]">
-                        <figure className="w-[140px] h-[140px]">
-                          <div>
-                            {book.imageLink}
-                          </div>
+                        <figure className="min-w-[140px] h-[140px]">
+                          <img src={book.imageLink} alt="" className="w-[140px] h-[140px]"/>
                         </figure>
                         <div className="w-full">
                           <div className="font-semibold text-[#032b41] mb-2">
