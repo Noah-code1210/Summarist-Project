@@ -10,7 +10,7 @@ import { FaRegCircleQuestion } from "react-icons/fa6";
 import { MdLogout } from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { CiStar } from "react-icons/ci";
+import { IoIosStarOutline } from "react-icons/io";
 
 function page() {
   const [suggestedBook, setSuggestedBook] = useState([]);
@@ -186,6 +186,9 @@ function page() {
                           href=""
                           className="recommended__book--link"
                         >
+                          <div className="bg-[#032b41] w-fit h-[18px] px-2 absolute top-0 right-0 text-white text-[10px] flex items-center rounded-[20px]">
+                            {book.subscriptionRequired === true ? "Premium" : null}
+                          </div>
                           <figure className="w-[172px] h-[172px] mb-2">
                             <img
                               src={book.imageLink}
@@ -202,9 +205,12 @@ function page() {
                           <div className="text-sm text-[#394547] mb-2">
                             {book.subTitle}
                           </div>
-                          <div className="flex gap-2">
-                            <div>
-                              <CiStar className="w-4 h-4"/>
+                          <div className="flex gap-2 ">
+                            <div className="">
+                              <IoIosStarOutline className="w-4 h-4"/>
+                            </div>
+                            <div className="text-sm text-[#6b757b] font-light">
+                              {book.averageRating}
                             </div>
                           </div>
                         </a>
