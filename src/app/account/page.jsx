@@ -10,19 +10,31 @@ import { FaRegCircleQuestion } from "react-icons/fa6";
 import { MdLogout } from "react-icons/md";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { CiStar } from "react-icons/ci";
 
 function page() {
   const [suggestedBook, setSuggestedBook] = useState([]);
+  const [recommendedBooks, setRecommendedBooks] = useState([]);
 
   useEffect(() => {
     async function fetchSuggestedBook() {
       const { data } = await axios.get(
         "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected"
       );
-      console.log(data);
       setSuggestedBook(data);
     }
     fetchSuggestedBook();
+  }, []);
+
+  useEffect(() => {
+    async function fetchRecommendedBooks() {
+      const { data } = await axios.get(
+        "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"
+      );
+      console.log(data);
+      setRecommendedBooks(data);
+    }
+    fetchRecommendedBooks();
   }, []);
 
   return (
@@ -156,20 +168,50 @@ function page() {
                           </div>
                         </div>
                       </a>
-                      <div>
-                        <div className="account__section--title">
-                          Recommended For You
-                        </div>
-                        <div className="font-light color-[#394547] mb-4">
-                          We think you'll like these
-                        </div>
-                        <div>
-                          
-                        </div>
-                      </div>
                     </>
                   );
                 })}
+                <div>
+                  <div className="account__section--title">
+                    Recommended For You
+                  </div>
+                  <div className="font-light color-[#394547] mb-4">
+                    We think you'll like these
+                  </div>
+                  <div className="flex flex-wrap gap-4 snap-x snap-mandatory mb-8">
+                    {recommendedBooks.map((book) => {
+                      return (
+                        <a
+                          key={book.id}
+                          href=""
+                          className="recommended__book--link"
+                        >
+                          <figure className="w-[172px] h-[172px] mb-2">
+                            <img
+                              src={book.imageLink}
+                              alt=""
+                              className="w-full h-full"
+                            />
+                          </figure>
+                          <div className="font-bold text-[#032b41] mb-2">
+                            {book.title}
+                          </div>
+                          <div className="text-sm text-[#6b7f7b] font-light mb-2">
+                            {book.author}
+                          </div>
+                          <div className="text-sm text-[#394547] mb-2">
+                            {book.subTitle}
+                          </div>
+                          <div className="flex gap-2">
+                            <div>
+                              <CiStar className="w-4 h-4"/>
+                            </div>
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
