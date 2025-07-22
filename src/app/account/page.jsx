@@ -13,10 +13,10 @@ import { useEffect, useState } from "react";
 import { IoIosStarOutline } from "react-icons/io";
 import SkeletonLoading from "../../../assets/LoadingState/SkeletonLoading";
 
-
 function page() {
   const [forYouBook, setForYouBook] = useState([]);
   const [recommendedBooks, setRecommendedBooks] = useState([]);
+  const [suggestedBooks, setSuggestedBooks] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -37,10 +37,25 @@ function page() {
       const { data } = await axios.get(
         "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"
       );
-      console.log(data);
-      setRecommendedBooks(data);
+      setTimeout(() => {
+        setRecommendedBooks(data);
+        setLoading(false);
+      }, 2000);
     }
     fetchRecommendedBooks();
+  }, []);
+
+  useEffect(() => {
+    async function fetchSuggestedBook() {
+      const { data } = await axios.get(
+        "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=suggested"
+      );
+      setTimeout(() => {
+        setSuggestedBooks(data);
+        setLoading(false);
+      }, 2000);
+    }
+    fetchSuggestedBook();
   }, []);
 
   return (
@@ -140,7 +155,6 @@ function page() {
           </div>
           {loading ? (
             <>
-              
               <SkeletonLoading />
             </>
           ) : (
@@ -152,33 +166,33 @@ function page() {
                   </div>
                   {forYouBook.map((book) => {
                     return (
-                        <a
-                          key={book.id}
-                          href=""
-                          className="flex justify-between w-full max-w-[681px] h-[188px] bg-[#fbefd6] rounded-sm p-6  mb-6 gap-[26px]"
-                        >
-                          <div className="text-[#032b41] w-[40%] max-w-[234px]">
-                            {book.subTitle}
-                          </div>
-                          <div className="w-[1px] bg-[#bac8ce]"></div>
-                          <div className="flex gap-4 w-[60%] max-w-[351px]">
-                            <figure className="min-w-[140px] h-[140px]">
-                              <img
-                                src={book.imageLink}
-                                alt=""
-                                className="w-[140px] h-[140px]"
-                              />
-                            </figure>
-                            <div className="w-full">
-                              <div className="font-semibold text-[#032b41] mb-2">
-                                {book.title}
-                              </div>
-                              <div className="text-sm text-[#394547] mb-4">
-                                {book.author}
-                              </div>
+                      <a
+                        key={book.id}
+                        href=""
+                        className="flex justify-between w-full max-w-[681px] h-[188px] bg-[#fbefd6] rounded-sm p-6  mb-6 gap-[26px]"
+                      >
+                        <div className="text-[#032b41] w-[40%] max-w-[234px]">
+                          {book.subTitle}
+                        </div>
+                        <div className="w-[1px] bg-[#bac8ce]"></div>
+                        <div className="flex gap-4 w-[60%] max-w-[351px]">
+                          <figure className="min-w-[140px] h-[140px]">
+                            <img
+                              src={book.imageLink}
+                              alt=""
+                              className="w-[140px] h-[140px]"
+                            />
+                          </figure>
+                          <div className="w-full">
+                            <div className="font-semibold text-[#032b41] mb-2">
+                              {book.title}
+                            </div>
+                            <div className="text-sm text-[#394547] mb-4">
+                              {book.author}
                             </div>
                           </div>
-                        </a>
+                        </div>
+                      </a>
                     );
                   })}
                   <div>
@@ -231,7 +245,53 @@ function page() {
                     </div>
                   </div>
                   <div>
-
+                    <div className="account__section--title">
+                      Suggested Books
+                    </div>
+                    <div className="font-light color-[#394547] mb-4">
+                      Browse those books
+                    </div>
+                    <div className="flex flex-wrap gap-4 snap-x snap-mandatory mb-8">
+                      {suggestedBooks.map((book) => {
+                        return (
+                          <a
+                            key={book.id}
+                            href=""
+                            className="recommended__book--link"
+                          >
+                            <div className="bg-[#032b41] w-fit h-[18px] px-2 absolute top-0 right-0 text-white text-[10px] flex items-center rounded-[20px]">
+                              {book.subscriptionRequired === true
+                                ? "Premium"
+                                : null}
+                            </div>
+                            <figure className="w-[172px] h-[172px] mb-2">
+                              <img
+                                src={book.imageLink}
+                                alt=""
+                                className="w-full h-full"
+                              />
+                            </figure>
+                            <div className="font-bold text-[#032b41] mb-2">
+                              {book.title}
+                            </div>
+                            <div className="text-sm text-[#6b7f7b] font-light mb-2">
+                              {book.author}
+                            </div>
+                            <div className="text-sm text-[#394547] mb-2">
+                              {book.subTitle}
+                            </div>
+                            <div className="flex gap-2 ">
+                              <div className="">
+                                <IoIosStarOutline className="w-4 h-4" />
+                              </div>
+                              <div className="text-sm text-[#6b757b] font-light">
+                                {book.averageRating}
+                              </div>
+                            </div>
+                          </a>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
