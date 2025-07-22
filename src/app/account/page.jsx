@@ -152,7 +152,6 @@ function page() {
                   </div>
                   {suggestedBook.map((book) => {
                     return (
-                      <>
                         <a
                           key={book.id}
                           href=""
@@ -180,7 +179,6 @@ function page() {
                             </div>
                           </div>
                         </a>
-                      </>
                     );
                   })}
                   <div>
