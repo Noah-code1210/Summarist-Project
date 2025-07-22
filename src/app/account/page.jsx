@@ -15,21 +15,21 @@ import SkeletonLoading from "../../../assets/LoadingState/SkeletonLoading";
 
 
 function page() {
-  const [suggestedBook, setSuggestedBook] = useState([]);
+  const [forYouBook, setForYouBook] = useState([]);
   const [recommendedBooks, setRecommendedBooks] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchSuggestedBook() {
+    async function fetchForYouBook() {
       const { data } = await axios.get(
         "https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected"
       );
       setTimeout(() => {
-        setSuggestedBook(data);
+        setForYouBook(data);
         setLoading(false);
       }, 2000);
     }
-    fetchSuggestedBook();
+    fetchForYouBook();
   }, []);
 
   useEffect(() => {
@@ -150,7 +150,7 @@ function page() {
                   <div className="account__section--title">
                     Selected just for you
                   </div>
-                  {suggestedBook.map((book) => {
+                  {forYouBook.map((book) => {
                     return (
                         <a
                           key={book.id}
@@ -229,6 +229,9 @@ function page() {
                         );
                       })}
                     </div>
+                  </div>
+                  <div>
+
                   </div>
                 </div>
               </div>
