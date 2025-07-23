@@ -8,8 +8,6 @@ import { MdLogout } from "react-icons/md";
 import Logo from "../../assets/WebsiteLogo.png";
 import { IoMdSearch } from "react-icons/io";
 
-
-
 function Vertnavbar() {
   return (
     <>
@@ -37,24 +35,18 @@ function Vertnavbar() {
               </div>
               <div>My Library</div>
             </a>
-            <a
-              href=""
-              className="account__tabs cursor-not-allowed hover:bg-transparent"
-            >
+            <div className="account__tabs cursor-not-allowed hover:bg-transparent">
               <div>
                 <RiBallPenLine className="account__tab--img w-6 h-6" />
               </div>
               <div>Highlights</div>
-            </a>
-            <a
-              href=""
-              className="account__tabs cursor-not-allowed hover:bg-transparent"
-            >
+            </div>
+            <div className="account__tabs cursor-not-allowed hover:bg-transparent">
               <div>
                 <IoMdSearch className="account__tab--img" />
               </div>
               <div>Search</div>
-            </a>
+            </div>
           </div>
         </div>
         <div>
@@ -64,15 +56,12 @@ function Vertnavbar() {
             </div>
             <div>Settings</div>
           </a>
-          <a
-            href=""
-            className="account__tabs cursor-not-allowed hover:bg-transparent"
-          >
+          <div className="account__tabs cursor-not-allowed hover:bg-transparent">
             <div>
               <FaRegCircleQuestion className="account__tab--img" />
             </div>
             <div>Help & Support</div>
-          </a>
+          </div>
           <a href="/" className="account__tabs">
             <div>
               <MdLogout className="account__tab--img" />
