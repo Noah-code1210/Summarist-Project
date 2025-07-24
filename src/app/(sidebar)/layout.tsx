@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Vertnavbar from "../../app/Vertnavbar"
-import Searchbar from "../../app/Searchbar"
+import Vertnavbar from "../vertnavbar"
+import Searchbar from "../searchbar"
 
 export const metadata: Metadata = {
   title: "Summarist",

@@ -6,7 +6,6 @@ import { IoIosStarOutline } from "react-icons/io";
 import SkeletonLoading from "../../../../assets/LoadingState/SkeletonLoading";
 import Logo from "../../../../assets/WebsiteLogo.png";
 
-
 function page() {
   const [forYouBook, setForYouBook] = useState([]);
   const [recommendedBooks, setRecommendedBooks] = useState([]);
