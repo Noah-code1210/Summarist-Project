@@ -12,6 +12,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { IoIosStarOutline } from "react-icons/io";
 import SkeletonLoading from "../../../assets/LoadingState/SkeletonLoading";
+import Link from "next/link";
 
 function page() {
   const [forYouBook, setForYouBook] = useState([]);
@@ -145,7 +146,8 @@ function page() {
                 </div>
                 <div>Help & Support</div>
               </a>
-              <a href="" className="account__tabs">
+              
+              <a href="/" className="account__tabs">
                 <div>
                   <MdLogout className="account__tab--img" />
                 </div>
