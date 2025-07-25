@@ -13,21 +13,19 @@ import { IoMdClose } from "react-icons/io";
 import { IoPersonSharp } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { redirect } from "next/navigation";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
   const [skeletonLoading, setSkeletonLoading] = useState(false);
-  const [hideWords, setHideWords] = useState(false);
 
   const guestLogin = () => {
+    setSkeletonLoading(true);
     setTimeout(() => {
-      setSkeletonLoading(true);
-      setHideWords(true);
-      navigate("/account");
-      setSkeletonLoading(false);
+      redirect("/account")
+      setSkeletonLoading(false)
     }, 3000);
   };
-  guestLogin();
 
   return (
     <>
@@ -47,11 +45,11 @@ function Home() {
                   <div className="text-xl font-bold text-[#032b41] mb-6">
                     Log in to Summarist
                   </div>
-                  <button className="sign-in__buttons bg-[#3a579d] hover:bg-[#25396b]">
+                  <button className="sign-in__buttons bg-[#3a579d] hover:bg-[#25396b]" onClick={guestLogin}>
                     <figure>
                       <IoPersonSharp className="absolute w-7 h-7 top-1.5 left-2" />
                     </figure>
-                    {hideWords && <div className="">Log in as Guest</div>}
+                    <div>Log in as Guest</div>
                     {skeletonLoading && (
                       <div className="skeletonLoadingState">
                         <AiOutlineLoading3Quarters />

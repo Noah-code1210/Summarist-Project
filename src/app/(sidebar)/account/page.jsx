@@ -115,7 +115,7 @@ function page() {
                             <div className="bg-[#032b41] w-fit h-[18px] px-2 absolute top-0 right-0 text-white text-[10px] flex items-center rounded-[20px]">
                               {book.subscriptionRequired === true
                                 ? "Premium"
-                                : null}
+                                : 'Regular'}
                             </div>
                             <figure className="w-[172px] h-[172px] mb-2">
                               <img
