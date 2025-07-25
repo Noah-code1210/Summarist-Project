@@ -98,6 +98,9 @@
    .recommended__book--link {
     @apply relative snap-start pt-8 pb-3 px-3 decoration-0 rounded-sm w-full max-w-[200px]
    }
+   .skeletonLoadingState {
+    @apply 
+   }
 }
 
 :root {

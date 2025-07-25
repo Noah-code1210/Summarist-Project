@@ -1,3 +1,4 @@
+'use client'
 import { AiOutlineHome } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
 import { RiBallPenLine } from "react-icons/ri";

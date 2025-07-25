@@ -1,4 +1,5 @@
 "use client";
+import React from 'react'
 import Image from "next/image";
 import HeaderImg from "../../assets/HeaderImg.png";
 import { FaFileAlt, FaLightbulb, FaMicrophone } from "react-icons/fa";
@@ -7,14 +8,26 @@ import { FaCrown } from "react-icons/fa6";
 import { FaLeaf } from "react-icons/fa";
 import StatisticsIcon from "../../assets/icons/StatisticsIcon";
 import Logo from "../../assets/WebsiteLogo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { IoPersonSharp } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
-import Link from "next/link";
+import { useNavigate } from 'react'
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [skeletonLoading, setSkeletonLoading] = useState(false)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const guestLogin = () => {
+      setTimeout(() => {
+        setSkeletonLoading(true)
+        navigate("/account")
+        setSkeletonLoading(false)
+      }, 3000);
+    }
+  }, [])
 
   return (
     <>
@@ -38,10 +51,13 @@ function Home() {
                     <figure>
                       <IoPersonSharp className="absolute w-7 h-7 top-1.5 left-2" />
                     </figure>
-                    <Link href="/account">
                       <div>Log in as Guest</div>
-                    </Link>
                   </button>
+                  {
+                    skeletonLoading && <div className='skeletonLoadingState'>
+
+                    </div>
+                  }
                   <div className="seperator">
                     <div className="mx-6">or</div>
                   </div>
