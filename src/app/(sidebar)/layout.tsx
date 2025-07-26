@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Vertnavbar from "../vertnavbar"
-import Searchbar from "../searchbar"
+import Vertnavbar from "../vertnavbar";
+import Searchbar from "../searchbar";
 
 export const metadata: Metadata = {
   title: "Summarist",
@@ -17,6 +17,8 @@ export default function RootLayout({
       <body>
         <Searchbar />
         <Vertnavbar />
+      </body>
+      <body>
         {children}
       </body>
     </html>
