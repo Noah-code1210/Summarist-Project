@@ -22,8 +22,8 @@ function Home() {
   const guestLogin = () => {
     setSkeletonLoading(true);
     setTimeout(() => {
-      redirect("/account")
-      setSkeletonLoading(false)
+      redirect("/account");
+      setSkeletonLoading(false);
     }, 3000);
   };
 
@@ -45,15 +45,21 @@ function Home() {
                   <div className="text-xl font-bold text-[#032b41] mb-6">
                     Log in to Summarist
                   </div>
-                  <button className="sign-in__buttons bg-[#3a579d] hover:bg-[#25396b]" onClick={guestLogin}>
+                  <button
+                    className="sign-in__buttons bg-[#3a579d] hover:bg-[#25396b]"
+                    onClick={guestLogin}
+                  >
                     <figure>
                       <IoPersonSharp className="absolute w-7 h-7 top-1.5 left-2" />
                     </figure>
-                    <div>Log in as Guest</div>
-                    {skeletonLoading && (
-                      <div className="skeletonLoadingState">
-                        <AiOutlineLoading3Quarters />
-                      </div>
+                    {skeletonLoading ? (
+                      skeletonLoading && (
+                        <div className="skeletonLoadingState">
+                          <AiOutlineLoading3Quarters />
+                        </div>
+                      )
+                    ) : (
+                      <div>Log in as Guest</div>
                     )}
                   </button>
                   <div className="seperator">
