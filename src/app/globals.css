@@ -99,7 +99,7 @@
     @apply relative snap-start pt-8 pb-3 px-3 decoration-0 rounded-sm w-full max-w-[200px]
    }
    .skeletonLoadingState {
-    @apply 
+    @apply flex justify-center items-center animate-spin z-999 
    }
 }
 

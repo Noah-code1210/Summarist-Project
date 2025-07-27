@@ -1,5 +1,5 @@
 "use client";
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 import HeaderImg from "../../assets/HeaderImg.png";
 import { FaFileAlt, FaLightbulb, FaMicrophone } from "react-icons/fa";
@@ -12,22 +12,22 @@ import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { IoPersonSharp } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from 'react'
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
-  const [skeletonLoading, setSkeletonLoading] = useState(false)
-  const navigate = useNavigate()
+  const [skeletonLoading, setSkeletonLoading] = useState(false);
+  const [hideWords, setHideWords] = useState(false);
 
-  useEffect(() => {
-    const guestLogin = () => {
-      setTimeout(() => {
-        setSkeletonLoading(true)
-        navigate("/account")
-        setSkeletonLoading(false)
-      }, 3000);
-    }
-  }, [])
+  const guestLogin = () => {
+    setTimeout(() => {
+      setSkeletonLoading(true);
+      setHideWords(true);
+      navigate("/account");
+      setSkeletonLoading(false);
+    }, 3000);
+  };
+  guestLogin();
 
   return (
     <>
@@ -51,13 +51,13 @@ function Home() {
                     <figure>
                       <IoPersonSharp className="absolute w-7 h-7 top-1.5 left-2" />
                     </figure>
-                      <div>Log in as Guest</div>
+                    {hideWords && <div className="">Log in as Guest</div>}
+                    {skeletonLoading && (
+                      <div className="skeletonLoadingState">
+                        <AiOutlineLoading3Quarters />
+                      </div>
+                    )}
                   </button>
-                  {
-                    skeletonLoading && <div className='skeletonLoadingState'>
-
-                    </div>
-                  }
                   <div className="seperator">
                     <div className="mx-6">or</div>
                   </div>
