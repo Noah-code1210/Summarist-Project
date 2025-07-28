@@ -62,7 +62,7 @@ function Home() {
                       <div>Log in as Guest</div>
                     )}
                   </button>
-                  <div className="seperator">
+                  <div className="text-sm text-[#6b757b] flex items-center gap-2 max-w-[240px] my-6 mx-auto before:content-[''] before:flex-grow before:h-[1px] after:content-[''] after:flex-grow after:h-[1px]">
                     <div className="mx-6">or</div>
                   </div>
                   <button className="sign-in__buttons bg-[#4285f4] hover:bg-[#3367d6]">
@@ -71,7 +71,7 @@ function Home() {
                     </figure>
                     <div>Log in with Google</div>
                   </button>
-                  <div className="seperator">
+                  <div className="text-sm text-[#6b757b] flex items-center gap-2 max-w-[240px] my-6 mx-auto before:content-[''] before:flex-grow before:h-[1px] after:content-[''] after:flex-grow after:h-[1px]">
                     <div className="mx-6">or</div>
                   </div>
                   <form className="flex flex-col gap-y-4">

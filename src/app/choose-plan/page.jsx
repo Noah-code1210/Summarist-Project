@@ -58,7 +58,7 @@ function choosePlan() {
             <div className="text-[32px] text-[#032b41] text-center mb-8 font-bold">
               Choose the plan that fits you
             </div>
-            <div className="plan__card">
+            <div className="plan__card plan__card--active">
               <div className="plan__card--circle"></div>
               <div>
                 <div className="plan__card--title">
@@ -69,6 +69,25 @@ function choosePlan() {
                 </div>
                 <div className="plan__card--text">
                   7-day free trial included
+                </div>
+              </div>
+            </div>
+            <div className="text-sm text-[#6b757b] flex items-center gap-2 max-w-[240px] my-6 mx-auto before:content-[''] before:flex-grow before:h-[1px] before:bg-[#bac8ce] after:content-[''] after:flex-grow after:h-[1px] after:bg-[#bac8ce]">
+              <div>
+                or
+              </div>
+            </div>
+            <div className="plan__card plan__card--active">
+              <div className="plan__card--circle"></div>
+              <div>
+                <div className="plan__card--title">
+                  Premium Montly
+                </div>
+                <div className="plan__card--price">
+                  $9.99/month
+                </div>
+                <div className="plan__card--text">
+                  No trial included
                 </div>
               </div>
             </div>

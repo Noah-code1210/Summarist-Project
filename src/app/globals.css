@@ -119,6 +119,9 @@
    .plan__card {
     @apply flex gap-6 p-6 bg-[#f1f6f4] border-4 border-[#bac8ce] rounded-sm cursor-pointer max-w-[680px] mx-auto
    }
+   .plan__card--active {
+    @apply border-4 border-[#2be080]
+   }
    .plan__card--circle {
     @apply relative w-6 h-6 rounded-[50%] border-2 border-black flex justify-center items-center
    }
