@@ -116,6 +116,21 @@
    .bold {
     @apply font-extrabold
    }
+   .plan__card {
+    @apply flex gap-6 p-6 bg-[#f1f6f4] border-4 border-[#bac8ce] rounded-sm cursor-pointer max-w-[680px] mx-auto
+   }
+   .plan__card--circle {
+    @apply relative w-6 h-6 rounded-[50%] border-2 border-black flex justify-center items-center
+   }
+   .plan__card--title {
+    @apply text-lg font-semibold text-[#032b41] mb-2 
+   }
+   .plan__card--price {
+    @apply text-2xl font-bold text-[#032b41] mb-2
+   }
+   .plan__card--text {
+    @apply text-[#6b757b] text-sm
+   }
 }
 
 :root {

@@ -58,6 +58,20 @@ function choosePlan() {
             <div className="text-[32px] text-[#032b41] text-center mb-8 font-bold">
               Choose the plan that fits you
             </div>
+            <div className="plan__card">
+              <div className="plan__card--circle"></div>
+              <div>
+                <div className="plan__card--title">
+                  Premium Plus Yearly
+                </div>
+                <div className="plan__card--price">
+                  $99.99/year
+                </div>
+                <div className="plan__card--text">
+                  7-day free trial included
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
