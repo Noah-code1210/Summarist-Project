@@ -107,6 +107,15 @@
    .settings__sub-title {
     @apply text-lg font-bold text-[#032b41] 
    }
+   .plan__features--wrapper {
+    @apply flex justify-center text-[#032b41] mb-3
+   }
+   .plan__features--title {
+    @apply text-[#394547] text-base/6
+   }
+   .bold {
+    @apply font-extrabold
+   }
 }
 
 :root {
