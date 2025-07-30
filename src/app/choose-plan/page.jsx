@@ -91,6 +91,16 @@ function choosePlan() {
                 </div>
               </div>
             </div>
+            <div className="bg-white sticky bottom-0 z-1 py-8 flex flex-col items-center gap-4">
+              <span>
+                <button className="bg-[#2bd97c] text-[#032b41] h-10 rounded-sm transition-all flex items-center justify-center min-w-[270px]">
+                  Start your 7-day trial
+                </button>
+              </span>
+              <div className="text-xs text-[#6b757b] text-center">
+                Cancel your trial at any time before it ends, and you won't be charged.
+              </div>
+            </div>
           </div>
         </div>
       </div>
